@@ -30,39 +30,40 @@ class MyStack1:
         return len(self.queue) == 0
 
 # Strict Queue
-class MyStack2:
+class MyStack:
     def __init__(self):
-        self.queue = []
+        self.queue = Queue()
 
     def push(self, x: int) -> None:
-        pushToBack(self.queue, x)
+        self.queue.pushToBack(x)
 
     def pop(self) -> int:
-        for i in range(len(self.queue)-1):
-            pushToBack(self.queue, popFromFront(self.queue))
-        return popFromFront(self.queue)
+        for i in range(self.queue.size()-1):
+            self.queue.pushToBack(self.queue.popFromFront())
+        return self.queue.popFromFront()
 
     def top(self) -> int:
-        return popFromFront(self.queue)
+        return self.queue.peekFromFront()
 
     def empty(self) -> bool:
-        return isEmpty(self.queue)
-
-def pushToBack(queue:List[int], x:int) -> List[int]:
-    stack.append(x)
-    return stack
-
-def popFromFront(queue:List[int]) -> List[int]:
-    stack.pop(0)
-    return stack
-
-def peekFromFront(queue:List[int]) -> int:
-    return stack[-1]
-
-def size(queue:List[int]) -> int:
-    return len(queue)
-
-def isEmpty(queue:List[int]) -> bool:
-    return len(queue) == 0
+        return self.queue.isEmpty()
 
 
+class Queue:
+    def __init__(self):
+        self.list = []
+
+    def pushToBack(self, x: int) -> None:
+        self.list.append(x)
+
+    def popFromFront(self) -> int:
+        return self.list.pop(0)
+
+    def peekFromFront(self) -> int:
+        return self.list[-1]
+
+    def size(self) -> int:
+        return len(self.list)
+
+    def isEmpty(self) -> bool:
+        return len(self.list) == 0
