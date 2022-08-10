@@ -11,7 +11,7 @@
 # 225. Implement Stack using Queues
 
 # List-Based Queue
-class MyStack:
+class MyStack1:
     def __init__(self):
         self.queue = []
 
@@ -28,3 +28,41 @@ class MyStack:
 
     def empty(self) -> bool:
         return len(self.queue) == 0
+
+# Strict Queue
+class MyStack2:
+    def __init__(self):
+        self.queue = []
+
+    def push(self, x: int) -> None:
+        pushToBack(self.queue, x)
+
+    def pop(self) -> int:
+        for i in range(len(self.queue)-1):
+            pushToBack(self.queue, popFromFront(self.queue))
+        return popFromFront(self.queue)
+
+    def top(self) -> int:
+        return popFromFront(self.queue)
+
+    def empty(self) -> bool:
+        return isEmpty(self.queue)
+
+def pushToBack(queue:List[int], x:int) -> List[int]:
+    stack.append(x)
+    return stack
+
+def popFromFront(queue:List[int]) -> List[int]:
+    stack.pop(0)
+    return stack
+
+def peekFromFront(queue:List[int]) -> int:
+    return stack[-1]
+
+def size(queue:List[int]) -> int:
+    return len(queue)
+
+def isEmpty(queue:List[int]) -> bool:
+    return len(queue) == 0
+
+
