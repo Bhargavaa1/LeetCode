@@ -9,11 +9,11 @@ from typing import *
 # Runtime: O(n) Space: O(1)
 # Two Pointer Solution
 
-
-def maxProfit(prices: List[int]) -> int:
-    maxProfit = 0
-    minPrice = prices[0]
-    for price in prices:
-        maxProfit = max(maxProfit, price-minPrice)
-        minPrice = min(minPrice, price)
-    return maxProfit
+class Solution:
+    def maxProfit(prices: List[int]) -> int:
+        maxProfit = 0
+        minPrice = prices[0]
+        for price in prices:
+            maxProfit = max(maxProfit, price-minPrice)
+            minPrice = min(minPrice, price)
+        return maxProfit
