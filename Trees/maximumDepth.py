@@ -1,3 +1,4 @@
+from typing import *
 from queue import Queue
 # 104. Maximum Depth of Binary Tree
 # Given the root of a binary tree, return its maximum depth.
@@ -15,8 +16,6 @@ class Solution:
     def maxDepthDFSRecursive(self, root: Optional[TreeNode]) -> int:
         if root == None:
             return 0
-        elif root.left == None and root.right == None:
-            return 1
         else:
             leftTraversal = 1+self.maxDepthDFSRecursive(root.left)
             rightTraversal = 1+self.maxDepthDFSRecursive(root.right)
