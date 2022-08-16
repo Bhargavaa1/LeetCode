@@ -11,7 +11,7 @@ class TreeNode:
         self.right = right
         
 class Solution:
-    # Recursive/DFS
+    # Recursive DFS
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
         if p == None and q == None:
             return True

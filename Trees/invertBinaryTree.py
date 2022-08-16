@@ -12,9 +12,10 @@ class TreeNode:
 
 class Solution:
     # Recursive DFS
-    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+    def invertTreeRecursiveDFS(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         if not root:
             return None
         else:
             root.left,right.right = self.invertTree(root.right), self.invertTree(root.left)
             return root
+    

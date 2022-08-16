@@ -14,7 +14,7 @@ class TreeNode:
 class Solution:
     # Recursive DFS
     def maxDepthDFSRecursive(self, root: Optional[TreeNode]) -> int:
-        if root == None:
+        if not root:
             return 0
         else:
             leftTraversal = 1+self.maxDepthDFSRecursive(root.left)
@@ -36,7 +36,7 @@ class Solution:
                 stack.append([node.right,depth+1])
         return res
 
-    # BFS
+    # Iterative BFS
     def maxDepthBFS(self, root: Optional[TreeNode]) -> int:
         level = 0
         if not root:
