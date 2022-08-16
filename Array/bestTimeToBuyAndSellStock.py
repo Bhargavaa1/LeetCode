@@ -8,9 +8,8 @@ from typing import *
 
 # Runtime: O(n) Space: O(1)
 # Two Pointer Solution
-
 class Solution:
-    def maxProfit(prices: List[int]) -> int:
+    def maxProfit(self, prices: List[int]) -> int:
         maxProfit = 0
         minPrice = prices[0]
         for price in prices:
