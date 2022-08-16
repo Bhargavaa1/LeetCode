@@ -1,3 +1,5 @@
+from typing import *
+from queue import Queue
 # 225. Implement Stack using Queues
 # Implement a last-in-first-out(LIFO) stack using only two queues. The implemented stack should support all the functions of a normal stack(push, top, pop, and empty).
 # Implement the MyStack class:
@@ -11,7 +13,7 @@
 #     You may simulate a queue using a list or deque(double-ended queue) as long as you use only a queue's standard operations.
 
 # List-Based Queue
-class MyStack1:
+class ListBasedQueue:
     def __init__(self):
         self.queue = []
 
@@ -30,40 +32,24 @@ class MyStack1:
         return len(self.queue) == 0
 
 # Strict Queue
-class MyStack:
+class StrictQueue:
     def __init__(self):
         self.queue = Queue()
 
     def push(self, x: int) -> None:
-        self.queue.pushToBack(x)
+        self.queue.put(x)
 
     def pop(self) -> int:
-        for i in range(self.queue.size()-1):
-            self.queue.pushToBack(self.queue.popFromFront())
-        return self.queue.popFromFront()
+        for i in range(self.queue.qsize()-1):
+            self.queue.put(self.queue.get())
+        return self.queue.get()
 
     def top(self) -> int:
-        return self.queue.peekFromFront()
+        for i in range(self.queue.qsize()-1):
+            self.queue.put(self.queue.get())
+        result = self.queue.get()
+        self.queue.put(result)
+        return result
 
     def empty(self) -> bool:
-        return self.queue.isEmpty()
-
-
-class Queue:
-    def __init__(self):
-        self.list = []
-
-    def pushToBack(self, x: int) -> None:
-        self.list.append(x)
-
-    def popFromFront(self) -> int:
-        return self.list.pop(0)
-
-    def peekFromFront(self) -> int:
-        return self.list[-1]
-
-    def size(self) -> int:
-        return len(self.list)
-
-    def isEmpty(self) -> bool:
-        return len(self.list) == 0
+        return self.queue.empty()

@@ -6,9 +6,9 @@ from typing import *
 # Return the maximum profit you can achieve from this transaction.
 # If you cannot achieve any profit, return 0.
 
-# Runtime: O(n) Space: O(1)
-# Two Pointer Solution
 class Solution:
+    # Runtime: O(n) Space: O(1)
+    # Two Pointer Solution
     def maxProfit(self, prices: List[int]) -> int:
         maxProfit = 0
         minPrice = prices[0]

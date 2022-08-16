@@ -8,9 +8,9 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
-
-# Recursive/DFS  
+        
 class Solution:
+    # Recursive/DFS
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
         if p == None and q == None:
             return True
