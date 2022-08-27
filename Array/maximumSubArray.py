@@ -4,9 +4,9 @@ from typing import *
 # A subarray is a contiguous part of an array.
 
 class Solution:
+    # Runtime: O(N) Space: O(1)
+    # Kadane's Algorithm
     def maxSubArray(nums: List[int]) -> int:
-        # Runtime: O(N) Space: O(1)
-        # Kadane's Algorithm
         globalMax = nums[0]
         localMax = 0
         for num in nums:
