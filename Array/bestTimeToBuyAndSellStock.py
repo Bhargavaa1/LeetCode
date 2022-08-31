@@ -9,10 +9,20 @@ from typing import *
 class Solution:
     # Runtime: O(n) Space: O(1)
     # Two Pointer Solution
-    def maxProfit(self, prices: List[int]) -> int:
+    def maxProfitTwoPointer(self, prices: List[int]) -> int:
         maxProfit = 0
         minPrice = prices[0]
         for price in prices:
             maxProfit = max(maxProfit, price-minPrice)
             minPrice = min(minPrice, price)
         return maxProfit
+    
+    # Runtime: O(N) Space: O(1)
+    # Sliding Window Solution
+    def maxProfitSlidingWindow(self, prices: List[int]) -> int:
+        left,result = 0,0
+        for right in range(0,len(prices)):
+            result = max(result,prices[right]-prices[left])
+            if prices[right] < prices[left]:
+                left = right
+        return result
