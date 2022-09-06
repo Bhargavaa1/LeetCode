@@ -1,7 +1,7 @@
 from typing import *
 # 1480. Running Sum of 1d Array
-# # Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]).
-# # Return the running sum of nums.
+# Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]).
+# Return the running sum of nums.
 class Solution:
     # Using "Extra" Space
     # Runtime: O(N) Space complexity: O(1) [Input and Output Array Space does not count]
