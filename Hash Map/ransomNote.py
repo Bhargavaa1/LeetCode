@@ -27,7 +27,7 @@ class Solution:
 
     # Runtime: O(N) Space: O(1)
     # Character Counting Counter Solution
-    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+    def canConstruct2(self, ransomNote: str, magazine: str) -> bool:
         ransomNoteCharCounter, magazineCharCounter = Counter(ransomNote), Counter(magazine)
         for ransomNoteChar in ransomNoteCharCounter:
             if ransomNoteChar not in magazineCharCounter or magazineCharCounter[ransomNoteChar] < ransomNoteCharCounter[ransomNoteChar]:
