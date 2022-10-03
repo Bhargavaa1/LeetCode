@@ -8,12 +8,12 @@ from typing import *
 class Solution:
     # Runtime: O(N) Space: O(N)
     # Stack Of Open Characters Solution
-    def isValid(s: str) -> bool:
+    def isValid(self, s: str) -> bool:
         stack = []
         parenDict = {')': '(', '}': '{', ']': '['}
         for i in s:
             if i in parenDict.values():
                 stack.append(i)
-            elif len(stack) == 0 or stack.pop() == parenDict[i]:
+            elif len(stack) == 0 or stack.pop() != parenDict[i]:
                 return False
         return len(stack) == 0
