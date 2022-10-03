@@ -7,7 +7,7 @@ from typing import *
 # If you cannot achieve any profit, return 0.
 
 class Solution:
-    # Runtime: O(n) Space: O(1)
+    # Runtime: O(N) Space: O(1)
     # Two Pointer Solution
     def maxProfitTwoPointer(self, prices: List[int]) -> int:
         maxProfit = 0
