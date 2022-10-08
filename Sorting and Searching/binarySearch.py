@@ -5,6 +5,8 @@ from typing import *
 # You must write an algorithm with O(log n) runtime complexity.
 
 class Solution:
+    # Runtime: O(N log N) Space: O(1)
+    # Two Pointer Binary Search
     def search(self, nums: List[int], target: int) -> int:
         l,r = 0,len(nums)-1
         while l <= r:
