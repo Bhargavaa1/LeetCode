@@ -14,9 +14,9 @@ class TreeNode:
         self.right = None
         
 class Solution:
-    # Traversal Solution
+    # Iterative Solution
     # Runtime: O(log N) Space: O(1)
-    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+    def lowestCommonAncestor(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
         curr = root
         while curr:
             if p.val < curr.val and q.val < curr.val:
@@ -25,3 +25,13 @@ class Solution:
                 curr = curr.right
             else:
                 return curr
+    
+    # Recursive Solution
+    # Runtime: O(log N) Space: O(1)
+    def lowestCommonAncestorRecursive(self, root: TreeNode, p: TreeNode, q:TreeNode) -> TreeNode:
+        if p.val < root.val and q.val < root.val:
+            return self.lowestCommonAncestorRecursive(root.left, p, q)
+        elif p.val > root.val and q.val > root.val:
+            return self.lowestCommonAncestorRecursive(root,right, p, q)
+        else:
+            return root
