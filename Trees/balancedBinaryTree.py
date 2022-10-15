@@ -12,6 +12,8 @@ from typing import *
 #         self.right = right
 
 class Solution:
+    # Helper Recursive Function Solution
+    # Runtime: O(N) Space: O(N)
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
         def dfs(root: Optional[TreeNode]) -> [bool,int]:
             if not root:
