@@ -11,9 +11,22 @@ class ListNode:
         self.next = next
 
 class Solution:
+    # Hashset Solution
+    # Runtime: O(N) Space: O(N)
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        hashSet = set()
+        iter = head
+        while iter:
+            if iter in hashSet:
+                return True
+            else:
+                hashSet.add(iter)
+            iter = iter.next
+        return False
+
     # Floyd’s Cycle Finding Algorithm
     # Runtime: O(N) Space: O(1)
-    def hasCycle(self, head: Optional[ListNode]) -> bool:
+    def hasCycle2(self, head: Optional[ListNode]) -> bool:
         slow, fast = head, head
         while fast and fast.next:
             slow,fast = slow.next, fast.next.next
