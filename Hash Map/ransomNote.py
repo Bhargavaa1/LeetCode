@@ -9,19 +9,19 @@ class Solution:
     # Runtime: O(N) Space: O(1)
     # Character Counting Hash Map Solution
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
-        ransomNoteCharCounter, magazineCharCounter = {}, {}
+        ransomNoteDict, magazineDict = {}, {}
         for i in ransomNote:
-            if i in ransomNoteCharCounter:
-                ransomNoteCharCounter[i] += 1
+            if i not in ransomNoteDict:
+                ransomNoteDict[i] = 1
             else:
-                ransomNoteCharCounter[i] = 1
-        for i in magazine:
-            if i in magazineCharCounter:
-                magazineCharCounter[i] += 1
+                ransomNoteDict[i] += 1
+        for j in magazine:
+            if j not in magazineDict:
+                magazineDict[j] = 1
             else:
-                magazineCharCounter[i] = 1
-        for i in ransomNoteCharCounter:
-            if i not in magazineCharCounter or magazineCharCounter[i] < ransomNoteCharCounter[i]:
+                magazineDict[j] += 1
+        for k in ransomNote:
+            if k not in magazineDict or ransomNoteDict[k] > magazineDict[k]:
                 return False
         return True
 
