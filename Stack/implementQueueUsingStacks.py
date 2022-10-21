@@ -13,17 +13,27 @@ from queue import LifoQueue
 
 class MyQueue:
     def __init__(self):
-        self.stack = LifoQueue()
+        self.stack1, self.stack2 = LifoQueue(), LifoQueue()
     
     def push(self, x: int) -> None:
-        self.stack.put(x)
+        self.stack1.put(x)
 
     def pop(self) -> int:
-        return 0
-        
+        while not self.stack1.empty():
+                self.stack2.put(self.stack1.get())
+        result = self.stack2.get()
+        while not self.stack2.empty():
+            self.stack1.put(self.stack2.get())
+        return result
+
     def peek(self) -> int:
-        return 0
+        while not self.stack1.empty():
+                self.stack2.put(self.stack1.get())
+        result = self.stack2.get()
+        self.stack2.put(result)
+        while not self.stack2.empty():
+            self.stack1.put(self.stack2.get())
+        return result
 
     def empty(self) -> bool:
-        return self.stack.empty()
-    
+        return self.stack1.empty()
