@@ -6,6 +6,7 @@ from typing import *
 # Return the maximum profit you can achieve from this transaction.
 # If you cannot achieve any profit, return 0.
 
+
 class Solution:
     # Runtime: O(N) Space: O(1)
     # Two Pointer Solution
@@ -13,16 +14,16 @@ class Solution:
         maxProfit = 0
         minPrice = prices[0]
         for price in prices:
-            maxProfit = max(maxProfit, price-minPrice)
+            maxProfit = max(maxProfit, price - minPrice)
             minPrice = min(minPrice, price)
         return maxProfit
-    
+
     # Runtime: O(N) Space: O(1)
     # Sliding Window Solution
     def maxProfitSlidingWindow(self, prices: List[int]) -> int:
-        left,result = 0,0
-        for right in range(0,len(prices)):
-            result = max(result,prices[right]-prices[left])
+        left, result = 0, 0
+        for right in range(0, len(prices)):
+            result = max(result, prices[right] - prices[left])
             if prices[right] < prices[left]:
                 left = right
         return result
