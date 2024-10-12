@@ -8,12 +8,12 @@ from typing import List
 
 
 def two_sum_sorted(nums: List[int], target: int) -> List[int]:
-  left, right = 0, len(nums) - 1
-  two_sum: int = nums[left] + nums[right]
+  l, r = 0, len(nums) - 1
+  two_sum: int = nums[l] + nums[r]
   while True:
     if two_sum == target:
-      return [left + 1, right + 1]
+      return [l + 1, r + 1]
     elif two_sum < target:
-      left += 1
+      l += 1
     else:
-      right -= 1
+      r -= 1
