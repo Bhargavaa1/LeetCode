@@ -9,8 +9,9 @@ class Node:
 
 
 def middle_of_linked_list(head: Node) -> int:
-  slow = fast = head
-  while fast and fast.next:
-    fast = fast.next.next
-    slow = slow.next
-  return slow.val
+  s = f = head
+  while f and f.next:
+    f = f.next.next
+    s = s.next
+  return s.val
+

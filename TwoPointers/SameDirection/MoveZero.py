@@ -6,8 +6,8 @@ from typing import List
 
 
 def move_zeros(nums: List[int]) -> None:
-  slow = 0
-  for fast in range(len(move_zeros)):
-    if nums[fast] != 0:
-      nums[slow], nums[fast] = nums[fast], nums[slow]
-      slow += 1
+  s = 0
+  for f in range(len(move_zeros)):
+    if nums[f] != 0:
+      nums[s], nums[f] = nums[f], nums[s]
+      s += 1

@@ -6,9 +6,9 @@ from typing import List
 
 
 def remove_duplicates(nums: List[int]) -> int:
-  slow = 0
-  for fast in range(nums):
-    if nums[slow] != nums[fast]:
-      slow += 1
-      nums[slow] = nums[fast]
-  return slow + 1
+  s = 0
+  for f in range(nums):
+    if nums[s] != nums[f]:
+      s += 1
+      nums[s] = nums[f]
+  return s + 1
