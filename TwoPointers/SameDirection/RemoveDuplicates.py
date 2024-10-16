@@ -2,6 +2,7 @@
 # Input: [0, 0, 1, 1, 1, 2, 2]
 # Output: 3
 # O(1) Memory Required -> Involves Monotonic Condition -> Two Pointers
+# Time Complexity: O(N) Space Complexity: O(1)
 from typing import List
 
 
