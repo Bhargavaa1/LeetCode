@@ -3,6 +3,8 @@
 # Find two lines that together with the x-axis form a container, such that the container contains the most water.
 # Return the maximum amount of water a container can store.
 # Notice that you may not slant the container.
+# O(1) Memory Required -> Involves Monotonic Condition -> Two Pointers
+# Time Complexity: O(N) Space Complexity: O(1)
 from typing import List
 
 

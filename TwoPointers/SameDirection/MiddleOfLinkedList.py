@@ -1,5 +1,6 @@
 # Find the middle node of a linked list. If the number of nodes is even, then return the second middle node
 # Involves Linked Lists -> Two Pointers
+# Time Complexity: O(N) Space Complexity: O(1)
 
 
 class Node:
@@ -14,4 +15,3 @@ def middle_of_linked_list(head: Node) -> int:
     f = f.next.next
     s = s.next
   return s.val
-

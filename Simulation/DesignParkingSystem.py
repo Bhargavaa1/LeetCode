@@ -4,7 +4,7 @@
 #   Adding a car to the parking lot, which is subject to there being an available slot for the car's type.
 #   When a car tries to park, the parking system checks if there is an available slot for that particular size of the car. If an appropriate slot is available, the car parks (i.e., the count of available slots of that type reduces by one), and the system returns true. If no slot is available for that car's type, the system returns false.
 # Simulating Coding Problem
-# Time Complexity: O(1) Space Complexity: O(1) 
+# Time Complexity: O(1) Space Complexity: O(1)
 from typing import List
 
 
