@@ -3,7 +3,7 @@ def sliding_window_fixed_size(input_array, window_size):
   ans = window = input_array[0:window_size]
   for right in range(window_size, len(input_array)):
     left = right - window_size
-    remove input_array[left] from_ window
+    remove input_array[left] from window
     append input_array[right] to window
     ans = optimal(ans, window)
   return ans
